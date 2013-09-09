@@ -8,10 +8,27 @@
     <servlet>
         <servlet-name>AreaCircleController</servlet-name>
         <servlet-class>Class4Lab.c1.controller.AreaCircleController</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
         <servlet-name>ThirdSideRightTriangleController</servlet-name>
         <servlet-class>Class4Lab.c1.controller.ThirdSideRightTriangleController</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>Class4 Geometry C2</servlet-name>
+        <servlet-class>Class4Lab.c2.controller.GeometryCalculationController</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>AreaCircleController C2</servlet-name>
+        <servlet-class>Class4Lab.c2.controller.AreaCircleController</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>ThirdSideRightTriangleController C2</servlet-name>
+        <servlet-class>Class4Lab.c2.controller.ThirdSideRightTriangleController</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>Class4 Geometry</servlet-name>
@@ -25,6 +42,19 @@
         <servlet-name>ThirdSideRightTriangleController</servlet-name>
         <url-pattern>/CalculateThirdSideTriangle.jsp</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Class4 Geometry C2</servlet-name>
+        <url-pattern>/CalculateGeometryC2.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AreaCircleController C2</servlet-name>
+        <url-pattern>/CalculateAreaCircleC2.jsp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ThirdSideRightTriangleController C2</servlet-name>
+        <url-pattern>/CalculateThirdSideTriangleC2.jsp</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         <session-timeout>
             30

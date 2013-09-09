@@ -1,6 +1,7 @@
 package Class4Lab.c2.controller;
 
 
+import Class4Lab.c2.model.RectangleCalculator;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -49,25 +50,16 @@ public class GeometryCalculationController extends HttpServlet {
         String l = request.getParameter("length");
         String w = request.getParameter("width");
         
-        Double dlength = Double.parseDouble(l);
-        Double dwidth = Double.parseDouble(w);
-        Double darea = dlength * dwidth;
-        String area = darea.toString();
+        //Double dlength = Double.parseDouble(l);
+        //Double dwidth = Double.parseDouble(w);
+        //Double darea = dlength * dwidth;
+        //String area = darea.toString();
+         
         
-        
-        
-                
-        // Create a new instance of a model object
-        // For some applications, we would not want to create a new one each time.
-        //GeometryExpert be = new GeometryExpert();
-        // Always a good idea to trim and/or validate input data
-        //List result = be.getBrands(l.trim());
-        //result = be.getBrands(w.trim());
+        RectangleCalculator rc = new RectangleCalculator();
+        String area = rc.getArea(l, w).toString();      
 
-        // Parameters are read only Request object properties, but attributes
-        // are read/write. We can use attributes to store data for use on
-        // another page.
-        //request.setAttribute("recommendations", result);
+        
         request.setAttribute("length", l);
         request.setAttribute("width", w);
         request.setAttribute("area", area);

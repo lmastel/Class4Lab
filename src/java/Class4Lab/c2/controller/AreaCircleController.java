@@ -1,5 +1,6 @@
 package Class4Lab.c2.controller;
 
+import Class4Lab.c2.model.CircleCalculator;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AreaCircleController extends HttpServlet {
 
     private static final String RESULT_PAGE = "index_1.jsp";
-    private static final double PI = 3.14159265359;
+    //private static final double PI = 3.14159265359;
 
     /**
      * Processes requests for both HTTP
@@ -78,9 +79,12 @@ public class AreaCircleController extends HttpServlet {
         
         String r = request.getParameter("radius");
         
-        Double dradius = Double.parseDouble(r);
-        Double darea = PI * dradius * dradius;
-        String carea = darea.toString();
+        CircleCalculator cc = new CircleCalculator();
+        String carea = cc.getArea(r).toString();
+        
+        //Double dradius = Double.parseDouble(r);
+        //Double darea = PI * dradius * dradius;
+        //String carea = darea.toString();
         
         request.setAttribute("radius", r);
         request.setAttribute("carea", carea);

@@ -1,5 +1,6 @@
 package Class4Lab.c2.controller;
 
+import Class4Lab.c2.model.TriangleCalculator;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -79,6 +80,10 @@ public class ThirdSideRightTriangleController extends HttpServlet {
         String sa = request.getParameter("sidea");
         String sb = request.getParameter("sideb");
         
+        TriangleCalculator tc = new TriangleCalculator();
+        String sidec = tc.getThirdSide(sa, sb).toString();
+        
+        /**
         Double dsidea = Double.parseDouble(sa);
         Double dsideb = Double.parseDouble(sb);
         
@@ -89,6 +94,7 @@ public class ThirdSideRightTriangleController extends HttpServlet {
         Double c = Math.sqrt(c2);
         
         String sidec = c.toString();
+        */
         
         request.setAttribute("sidea", sa);
         request.setAttribute("sideb", sb);

@@ -133,12 +133,25 @@
             <input type="reset" value="Reset">
 
             <%
-                String length = (String) request.getAttribute("length");
-                out.print("<br>Length of rectangle: " + length);
-                String width = (String) request.getAttribute("width");
-                out.print("<br>Width of rectangle: " + width);
-                String area = (String) request.getAttribute("area");
-                out.print("<br>Area of rectangle= " + area);
+                String length = "";
+                Object objLength = request.getAttribute("length");
+                if (objLength != null) {
+                    length = objLength.toString();
+                    out.print("<br>Length of rectangle: " + length);
+                }
+                String width = "";
+                Object objWidth = request.getAttribute("width");
+                if (objWidth != null) {
+                    length = objWidth.toString();
+                    out.print("<br>Width of rectangle: " + length);
+                }
+                String area = "";
+                Object objArea = request.getAttribute("area");
+                if (objArea != null) {
+                    area = objArea.toString();
+                    out.print("<br>Area of rectangle= " + area);
+                }
+
 
             %>
         </form>
@@ -151,10 +164,19 @@
             <input type="reset" value="Reset">
 
             <%
-                String radius = (String) request.getAttribute("radius");
-                out.print("<br>Radius of the Circle: " + radius);
-                String carea = (String) request.getAttribute("carea");
-                out.print("<br>Area of the Circle = " + carea);
+                String radius = "";
+                Object objRadius = request.getAttribute("radius");
+                if (objRadius != null) {
+                    radius = objRadius.toString();
+                    out.print("<br>Radius of the Circle: " + radius);
+                }
+                String carea = "";
+                Object objCarea = request.getAttribute("carea");
+                if (objCarea != null) {
+                    carea = objCarea.toString();
+                    out.print("<br>Area of the Circle = " + carea);
+                }
+
             %>
         </form>
 
@@ -166,15 +188,27 @@
                                            maxlength="10"><br>
             <input type="submit" value="Submit">
             <input type="reset" value="Reset">
-            
-            <%
 
-                String sidea = (String) request.getAttribute("sidea");
-                String sideb = (String) request.getAttribute("sideb");
-                String sidec = (String) request.getAttribute("sidec");
-                out.print("<br>Side A of the Right Triangle: " + sidea);
-                out.print("<br>Side B of the Right Triangle: " + sideb);
-                out.print("<br>Third Side of the Right Triangle = " + sidec);
+            <%
+                String sidea = "";
+                Object objSidea = request.getAttribute("sidea");
+                if (objSidea != null) {
+                    sidea = objSidea.toString();
+                    out.print("<br>Side A of the Right Triangle: " + sidea);
+                }
+                String sideb = "";
+                Object objSideb = request.getAttribute("sideb");
+                if (objSideb != null) {
+                    sideb = objSideb.toString();
+                    out.print("<br>Side B of the Right Triangle: " + sideb);
+                }
+                String sidec = "";
+                Object objSidec = request.getAttribute("sidec");
+                if (objSidec != null) {
+                    sidec = objSidec.toString();
+                    out.print("<br>Side C (Third Side) of the Right Triangle: " + sidec);
+                }
+                
             %>
 
         </form>
